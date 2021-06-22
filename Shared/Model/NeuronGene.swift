@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum NeuronType: String {
+enum NeuronType {
     case input, hidden, output
 }
 

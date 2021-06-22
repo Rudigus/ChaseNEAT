@@ -27,6 +27,8 @@
 		572875DE2680B40100A5561D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572875CE2680B40000A5561D /* ContentView.swift */; };
 		572875DF2680B40100A5561D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 572875CF2680B40100A5561D /* Assets.xcassets */; };
 		572875E02680B40100A5561D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 572875CF2680B40100A5561D /* Assets.xcassets */; };
+		573D801B26820DEF00EFBEB1 /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573D801A26820DEF00EFBEB1 /* Target.swift */; };
+		573D801C26820DEF00EFBEB1 /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573D801A26820DEF00EFBEB1 /* Target.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,7 @@
 		572875CF2680B40100A5561D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		572875D42680B40100A5561D /* ChaseNEAT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChaseNEAT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		572875DA2680B40100A5561D /* ChaseNEAT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChaseNEAT.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		573D801A26820DEF00EFBEB1 /* Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +74,7 @@
 				570320032680B58500FA213A /* Brain.swift */,
 				5703200C2680B5D400FA213A /* Individual.swift */,
 				570320062680B5BB00FA213A /* Population.swift */,
+				573D801A26820DEF00EFBEB1 /* Target.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -214,6 +218,7 @@
 				5703201D2680BE2E00FA213A /* NeuronGene.swift in Sources */,
 				570320042680B58500FA213A /* Brain.swift in Sources */,
 				570320072680B5BB00FA213A /* Population.swift in Sources */,
+				573D801B26820DEF00EFBEB1 /* Target.swift in Sources */,
 				5703200D2680B5D400FA213A /* Individual.swift in Sources */,
 				570320252680D13900FA213A /* IndividualView.swift in Sources */,
 				570320112680BA0200FA213A /* Vector.swift in Sources */,
@@ -230,6 +235,7 @@
 				5703201E2680BE2E00FA213A /* NeuronGene.swift in Sources */,
 				570320052680B58500FA213A /* Brain.swift in Sources */,
 				570320082680B5BB00FA213A /* Population.swift in Sources */,
+				573D801C26820DEF00EFBEB1 /* Target.swift in Sources */,
 				5703200E2680B5D400FA213A /* Individual.swift in Sources */,
 				570320262680D13900FA213A /* IndividualView.swift in Sources */,
 				570320122680BA0200FA213A /* Vector.swift in Sources */,

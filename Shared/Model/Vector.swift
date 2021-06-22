@@ -7,9 +7,13 @@
 
 import Foundation
 
-class Vector {
+struct Vector: CustomStringConvertible {
     var x: Double
     var y: Double
+    
+    var description: String {
+        return "(\(x), \(y))"
+    }
     
     init(x: Double, y: Double) {
         self.x = x

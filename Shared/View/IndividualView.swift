@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct IndividualView: View {
-    let individual: Individual
+    @ObservedObject var individual: Individual
     
     init(individual: Individual) {
         self.individual = individual
