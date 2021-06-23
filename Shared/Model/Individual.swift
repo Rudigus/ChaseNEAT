@@ -11,6 +11,7 @@ enum IndividualState {
     case currentlyOnTask, hasFailedTask, hasCompletedTask
 }
 
+// Genetic Algorithm's basic unit
 class Individual: Identifiable, ObservableObject {
     var brain: Brain
     var position: Vector {
@@ -28,7 +29,9 @@ class Individual: Identifiable, ObservableObject {
         self.state = state
     }
     
-    func update(target: Vector) {
-//        self.position.y += 1
+    func update(targetPosition: Vector) {
+        let nextDirection = brain.nextDirection(individualPosition: position, targetPosition: targetPosition)
+        self.position.x += nextDirection.x
+        self.position.y += nextDirection.y
     }
 }

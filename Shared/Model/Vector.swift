@@ -31,6 +31,13 @@ struct Vector: CustomStringConvertible {
         return (diffX * diffX) + (diffY * diffY)
     }
     
+//    func distance(to other: Vector) -> Double {
+//        let diffX = self.x - other.x;
+//        let diffY = self.y - other.y;
+//        let productSum = (diffX * diffX) + (diffY * diffY)
+//        return sqrt(productSum)
+//    }
+    
 }
 
 extension Vector {

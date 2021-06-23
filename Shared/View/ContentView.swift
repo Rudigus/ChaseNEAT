@@ -14,12 +14,6 @@ struct ContentView: View {
         in: .common
     ).autoconnect()
     
-    let anotherTimer = Timer.publish(
-        every: 4.0,
-        on: .main,
-        in: .common
-    ).autoconnect()
-    
     var population = Population(individualCount: 10, individualSize: 10)
     var target: Target
     
@@ -37,13 +31,12 @@ struct ContentView: View {
         }
         .onReceive(timer) { input in
             if !self.population.hasFinishedTask {
-                self.population.update(target: self.target.position)
+                self.population.update(targetPosition: self.target.position)
             }
-        }
-        .onReceive(anotherTimer) { input in
-            target.randomizePosition(population: population)
+//            timer.upstream.connect().cancel()
         }
     }
+    
 }
 
 //struct ContentView_Previews: PreviewProvider {

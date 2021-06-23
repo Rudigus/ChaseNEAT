@@ -15,12 +15,14 @@
 		5703200E2680B5D400FA213A /* Individual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5703200C2680B5D400FA213A /* Individual.swift */; };
 		570320112680BA0200FA213A /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570320102680BA0200FA213A /* Vector.swift */; };
 		570320122680BA0200FA213A /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570320102680BA0200FA213A /* Vector.swift */; };
-		5703201D2680BE2E00FA213A /* NeuronGene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5703201C2680BE2E00FA213A /* NeuronGene.swift */; };
-		5703201E2680BE2E00FA213A /* NeuronGene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5703201C2680BE2E00FA213A /* NeuronGene.swift */; };
-		570320202680BE4700FA213A /* ConnectionGene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5703201F2680BE4700FA213A /* ConnectionGene.swift */; };
-		570320212680BE4700FA213A /* ConnectionGene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5703201F2680BE4700FA213A /* ConnectionGene.swift */; };
+		5703201D2680BE2E00FA213A /* Neuron.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5703201C2680BE2E00FA213A /* Neuron.swift */; };
+		5703201E2680BE2E00FA213A /* Neuron.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5703201C2680BE2E00FA213A /* Neuron.swift */; };
+		570320202680BE4700FA213A /* Synapse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5703201F2680BE4700FA213A /* Synapse.swift */; };
+		570320212680BE4700FA213A /* Synapse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5703201F2680BE4700FA213A /* Synapse.swift */; };
 		570320252680D13900FA213A /* IndividualView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570320242680D13900FA213A /* IndividualView.swift */; };
 		570320262680D13900FA213A /* IndividualView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570320242680D13900FA213A /* IndividualView.swift */; };
+		570E138426835A8500E4C286 /* Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570E138326835A8500E4C286 /* Layer.swift */; };
+		570E138526835A8500E4C286 /* Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570E138326835A8500E4C286 /* Layer.swift */; };
 		572875DB2680B40100A5561D /* ChaseNEATApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572875CD2680B40000A5561D /* ChaseNEATApp.swift */; };
 		572875DC2680B40100A5561D /* ChaseNEATApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572875CD2680B40000A5561D /* ChaseNEATApp.swift */; };
 		572875DD2680B40100A5561D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572875CE2680B40000A5561D /* ContentView.swift */; };
@@ -38,9 +40,10 @@
 		570320062680B5BB00FA213A /* Population.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Population.swift; sourceTree = "<group>"; };
 		5703200C2680B5D400FA213A /* Individual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Individual.swift; sourceTree = "<group>"; };
 		570320102680BA0200FA213A /* Vector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vector.swift; sourceTree = "<group>"; };
-		5703201C2680BE2E00FA213A /* NeuronGene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuronGene.swift; sourceTree = "<group>"; };
-		5703201F2680BE4700FA213A /* ConnectionGene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionGene.swift; sourceTree = "<group>"; };
+		5703201C2680BE2E00FA213A /* Neuron.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Neuron.swift; sourceTree = "<group>"; };
+		5703201F2680BE4700FA213A /* Synapse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Synapse.swift; sourceTree = "<group>"; };
 		570320242680D13900FA213A /* IndividualView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualView.swift; sourceTree = "<group>"; };
+		570E138326835A8500E4C286 /* Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layer.swift; sourceTree = "<group>"; };
 		572875CD2680B40000A5561D /* ChaseNEATApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaseNEATApp.swift; sourceTree = "<group>"; };
 		572875CE2680B40000A5561D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		572875CF2680B40100A5561D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -72,8 +75,9 @@
 			isa = PBXGroup;
 			children = (
 				570320102680BA0200FA213A /* Vector.swift */,
-				5703201C2680BE2E00FA213A /* NeuronGene.swift */,
-				5703201F2680BE4700FA213A /* ConnectionGene.swift */,
+				5703201F2680BE4700FA213A /* Synapse.swift */,
+				5703201C2680BE2E00FA213A /* Neuron.swift */,
+				570E138326835A8500E4C286 /* Layer.swift */,
 				570320032680B58500FA213A /* Brain.swift */,
 				5703200C2680B5D400FA213A /* Individual.swift */,
 				570320062680B5BB00FA213A /* Population.swift */,
@@ -219,8 +223,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				572875DD2680B40100A5561D /* ContentView.swift in Sources */,
-				5703201D2680BE2E00FA213A /* NeuronGene.swift in Sources */,
+				5703201D2680BE2E00FA213A /* Neuron.swift in Sources */,
 				570320042680B58500FA213A /* Brain.swift in Sources */,
+				570E138426835A8500E4C286 /* Layer.swift in Sources */,
 				570320072680B5BB00FA213A /* Population.swift in Sources */,
 				573D801B26820DEF00EFBEB1 /* Target.swift in Sources */,
 				5703200D2680B5D400FA213A /* Individual.swift in Sources */,
@@ -228,7 +233,7 @@
 				573D801E26822E2D00EFBEB1 /* TargetView.swift in Sources */,
 				570320112680BA0200FA213A /* Vector.swift in Sources */,
 				572875DB2680B40100A5561D /* ChaseNEATApp.swift in Sources */,
-				570320202680BE4700FA213A /* ConnectionGene.swift in Sources */,
+				570320202680BE4700FA213A /* Synapse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,8 +242,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				572875DE2680B40100A5561D /* ContentView.swift in Sources */,
-				5703201E2680BE2E00FA213A /* NeuronGene.swift in Sources */,
+				5703201E2680BE2E00FA213A /* Neuron.swift in Sources */,
 				570320052680B58500FA213A /* Brain.swift in Sources */,
+				570E138526835A8500E4C286 /* Layer.swift in Sources */,
 				570320082680B5BB00FA213A /* Population.swift in Sources */,
 				573D801C26820DEF00EFBEB1 /* Target.swift in Sources */,
 				5703200E2680B5D400FA213A /* Individual.swift in Sources */,
@@ -246,7 +252,7 @@
 				573D801F26822E2D00EFBEB1 /* TargetView.swift in Sources */,
 				570320122680BA0200FA213A /* Vector.swift in Sources */,
 				572875DC2680B40100A5561D /* ChaseNEATApp.swift in Sources */,
-				570320212680BE4700FA213A /* ConnectionGene.swift in Sources */,
+				570320212680BE4700FA213A /* Synapse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
