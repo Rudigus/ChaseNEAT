@@ -6,6 +6,11 @@
 //
 
 import Foundation
+#if os(iOS)
+import UIKit
+#elseif os(macOS)
+import AppKit
+#endif
 
 struct Vector: CustomStringConvertible {
     var x: Double
@@ -19,4 +24,29 @@ struct Vector: CustomStringConvertible {
         self.x = x
         self.y = y
     }
+    
+    func squaredDistance(to other: Vector) -> Double {
+        let diffX = self.x - other.x;
+        let diffY = self.y - other.y;
+        return (diffX * diffX) + (diffY * diffY)
+    }
+    
+}
+
+extension Vector {
+    static let zero = Vector(x: 0, y: 0)
+    #if os(iOS)
+    static let screenSize = Vector(x: UIScreen.main.bounds.size.width, y: UIScreen.main.bounds.size.height)
+    static let simulationSize = screenSize
+    #elseif os(macOS)
+    static let screenSize: Vector = {
+        if let screenSize = NSScreen.main?.frame.size {
+            return Vector(x: screenSize.width, y: screenSize.height)
+        }
+        else {
+            return Vector.zero
+        }
+    }()
+    static let simulationSize = Vector(x: screenSize.x / 2, y: screenSize.y / 2)
+    #endif
 }

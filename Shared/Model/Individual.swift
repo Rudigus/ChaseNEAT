@@ -29,6 +29,6 @@ class Individual: Identifiable, ObservableObject {
     }
     
     func update(target: Vector) {
-        self.position.y += 1
+//        self.position.y += 1
     }
 }

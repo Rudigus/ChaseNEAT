@@ -14,20 +14,34 @@ struct ContentView: View {
         in: .common
     ).autoconnect()
     
-    var population = Population(size: 10)
-    var target = Target(position: Vector(x: 50, y: 50))
+    let anotherTimer = Timer.publish(
+        every: 4.0,
+        on: .main,
+        in: .common
+    ).autoconnect()
+    
+    var population = Population(individualCount: 10, individualSize: 10)
+    var target: Target
+    
+    init() {
+        target = Target(population: population, size: 10, margin: 50)
+    }
     
     var body: some View {
-        ZStack(alignment: .topLeading) {
+        ZStack(alignment: .center) {
             Color.blue.edgesIgnoringSafeArea(.all)
-            ForEach(population.members) { (individual: Individual) in
+            ForEach(population.individuals) { (individual: Individual) in
                 IndividualView(individual: individual)
             }
+            TargetView(target: target)
         }
         .onReceive(timer) { input in
             if !self.population.hasFinishedTask {
                 self.population.update(target: self.target.position)
             }
+        }
+        .onReceive(anotherTimer) { input in
+            target.randomizePosition(population: population)
         }
     }
 }

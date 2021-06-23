@@ -29,6 +29,8 @@
 		572875E02680B40100A5561D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 572875CF2680B40100A5561D /* Assets.xcassets */; };
 		573D801B26820DEF00EFBEB1 /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573D801A26820DEF00EFBEB1 /* Target.swift */; };
 		573D801C26820DEF00EFBEB1 /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573D801A26820DEF00EFBEB1 /* Target.swift */; };
+		573D801E26822E2D00EFBEB1 /* TargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573D801D26822E2D00EFBEB1 /* TargetView.swift */; };
+		573D801F26822E2D00EFBEB1 /* TargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573D801D26822E2D00EFBEB1 /* TargetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,7 @@
 		572875D42680B40100A5561D /* ChaseNEAT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChaseNEAT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		572875DA2680B40100A5561D /* ChaseNEAT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChaseNEAT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		573D801A26820DEF00EFBEB1 /* Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
+		573D801D26822E2D00EFBEB1 /* TargetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +87,7 @@
 			children = (
 				572875CE2680B40000A5561D /* ContentView.swift */,
 				570320242680D13900FA213A /* IndividualView.swift */,
+				573D801D26822E2D00EFBEB1 /* TargetView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -221,6 +225,7 @@
 				573D801B26820DEF00EFBEB1 /* Target.swift in Sources */,
 				5703200D2680B5D400FA213A /* Individual.swift in Sources */,
 				570320252680D13900FA213A /* IndividualView.swift in Sources */,
+				573D801E26822E2D00EFBEB1 /* TargetView.swift in Sources */,
 				570320112680BA0200FA213A /* Vector.swift in Sources */,
 				572875DB2680B40100A5561D /* ChaseNEATApp.swift in Sources */,
 				570320202680BE4700FA213A /* ConnectionGene.swift in Sources */,
@@ -238,6 +243,7 @@
 				573D801C26820DEF00EFBEB1 /* Target.swift in Sources */,
 				5703200E2680B5D400FA213A /* Individual.swift in Sources */,
 				570320262680D13900FA213A /* IndividualView.swift in Sources */,
+				573D801F26822E2D00EFBEB1 /* TargetView.swift in Sources */,
 				570320122680BA0200FA213A /* Vector.swift in Sources */,
 				572875DC2680B40100A5561D /* ChaseNEATApp.swift in Sources */,
 				570320212680BE4700FA213A /* ConnectionGene.swift in Sources */,

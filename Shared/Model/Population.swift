@@ -8,10 +8,12 @@
 import Foundation
 
 class Population {
-    var members: [Individual]
-    var size: Int
+    var individuals: [Individual] = []
+    var individualCount: Int
+    var individualInitialPosition: Vector
+    var individualSize: Double
     var hasFinishedTask: Bool {
-        for individual in members {
+        for individual in individuals {
             if individual.state == .currentlyOnTask {
                 return false
             }
@@ -19,15 +21,20 @@ class Population {
         return true
     }
     
-    init(size: Int) {
-        self.size = size
-        members = []
-        for i in 0..<size {
-            members.append(Individual(brain: Brain(neuronGenes: [], connectionGenes: []), position: Vector(x: Double(i * 20), y: 0), size: 10))
+    init(individualCount: Int, individualInitialPosition: Vector = .zero, individualSize: Double) {
+        self.individualCount = individualCount
+        self.individualInitialPosition = individualInitialPosition
+        self.individualSize = individualSize
+        self.generate()
+    }
+    
+    func generate() {
+        for _ in 0..<individualCount {
+            individuals.append(Individual(brain: Brain(neuronGenes: [], connectionGenes: []), position: individualInitialPosition, size: individualSize))
         }
     }
     
     func update(target: Vector) {
-        self.members.forEach { $0.update(target: target) }
+        self.individuals.forEach { $0.update(target: target) }
     }
 }
