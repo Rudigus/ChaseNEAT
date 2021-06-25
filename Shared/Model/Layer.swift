@@ -8,13 +8,22 @@
 import Foundation
 
 // Represents a layer of the Neural Network
-class Layer {
+class Layer: CustomStringConvertible {
     var id: Int
     var neurons: [Neuron]
+    
+    var description: String {
+        return "Layer(id: \(id), neurons: \(neurons))"
+    }
     
     init(id: Int, neurons: [Neuron]) {
         self.id = id
         self.neurons = neurons
+    }
+    
+    init(copy: Layer) {
+        self.id = copy.id
+        self.neurons = copy.neurons
     }
     
     func forward(input: [Int: Double]) -> [Int: Double]? {

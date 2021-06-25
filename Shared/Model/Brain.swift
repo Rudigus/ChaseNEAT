@@ -8,12 +8,33 @@
 import Foundation
 
 // Will manage the decisions of an individual
-class Brain {
+class Brain: CustomStringConvertible {
     // Genome
     var layers: [Layer]
     
+    var description: String {
+        return "Brain(layers: \(layers))"
+    }
+    
     init(layers: [Layer]) {
         self.layers = layers
+    }
+    
+    init(copy: Brain) {
+        self.layers = []
+        for copyLayer in copy.layers {
+            self.layers.append(Layer.init(copy: copyLayer))
+        }
+    }
+    
+    func mutate(mutationRate: Double) {
+        for layer in layers {
+            for i in 0 ..< layer.neurons.count {
+                if Double.random(in: 0...1) < mutationRate {
+                    layer.neurons[i].randomizeSynapseWeights()
+                }
+            }
+        }
     }
     
     func forwardPropagation(input: [Int: Double]) -> [Int: Double]? {

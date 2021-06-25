@@ -8,11 +8,14 @@
 import Foundation
 
 // A bunch of individuals
-class Population {
-    var individuals: [Individual] = []
+class Population: ObservableObject {
+    @Published var individuals: [Individual] = []
+    @Published var generation: Int
     var individualCount: Int
     var individualInitialPosition: Vector
     var individualSize: Double
+    var individualSpeed: Double
+    var mutationRate: Double
     var hasFinishedTask: Bool {
         for individual in individuals {
             if individual.state == .currentlyOnTask {
@@ -22,27 +25,83 @@ class Population {
         return true
     }
     
-    init(individualCount: Int, individualInitialPosition: Vector = .zero, individualSize: Double) {
+    init(individualCount: Int, individualInitialPosition: Vector = .zero, individualSize: Double, individualSpeed: Double, mutationRate: Double) {
+        self.generation = 1
         self.individualCount = individualCount
         self.individualInitialPosition = individualInitialPosition
         self.individualSize = individualSize
-        self.generate()
-    }
-    
-    func generate() {
-        let inputNeurons = [Neuron(id: 1, synapses: [], bias: 0), Neuron(id: 2, synapses: [], bias: 0), Neuron(id: 3, synapses: [], bias: 0), Neuron(id: 4, synapses: [], bias: 0)]
-        let outputSynapses = [Synapse(startNeuronID: 1), Synapse(startNeuronID: 2), Synapse(startNeuronID: 3), Synapse(startNeuronID: 4)]
-        var outputNeurons = [Neuron(id: 5, synapses: outputSynapses, bias: 0), Neuron(id: 6, synapses: outputSynapses, bias: 0)]
-        for _ in 0..<individualCount {
-            for i in 0 ..< outputNeurons.count {
-                outputNeurons[i].randomizeSynapseWeights()
-            }
-            let layers: [Layer] = [Layer(id: 1, neurons: inputNeurons), Layer(id: 2, neurons: outputNeurons)]
-            individuals.append(Individual(brain: Brain(layers: layers), position: individualInitialPosition, size: individualSize))
-        }
+        self.individualSpeed = individualSpeed
+        self.mutationRate = mutationRate
+        self.generateIndividuals()
     }
     
     func update(targetPosition: Vector) {
         self.individuals.forEach { $0.update(targetPosition: targetPosition) }
     }
+    
+    func generateIndividuals() {
+        for _ in 0..<individualCount {
+            individuals.append(Individual(initialPosition: individualInitialPosition, size: individualSize, speed: individualSpeed))
+        }
+    }
+    
+    func killRemainingIndividuals() {
+        for individual in individuals {
+            if individual.state == .currentlyOnTask {
+                individual.state = .hasFailedTask
+            }
+        }
+    }
+    
+    func naturalSelection(targetPosition: Vector) {
+        var fitnessSum: Double = 0
+        var maxFitness: Double = -1
+        var maxFitnessIndex = -1
+        // Finds fitness sum, maximum fitness and index of the individual with maximum fitness
+        for index in 0 ..< individuals.count {
+            let individual = individuals[index]
+            let individualFitness = individual.fitness(target: targetPosition)
+            fitnessSum += individualFitness
+            if individualFitness > maxFitness {
+                maxFitness = individualFitness
+                maxFitnessIndex = index
+            }
+        }
+
+        let fitnessLotteryValue = Double.random(in: 0...1) * fitnessSum
+        var progenitor: Individual? = nil
+        var runningSum: Double = 0
+        // Chooses a random individual to be the progenitor of the next generation. Individuals with higher fitness have better odds
+        for index in 0..<individuals.count {
+            runningSum += self.individuals[index].fitness(target: targetPosition)
+            if (runningSum >= fitnessLotteryValue) {
+                progenitor = self.individuals[index]
+                break
+            }
+        }
+
+        guard let progenitor = progenitor else { return }
+        var newIndividuals: [Individual] = []
+        // Generates the individuals of the next generation based on the chosen progenitor
+        for _ in 1..<individuals.count {
+            let newBrain = Brain(copy: progenitor.brain)
+            newBrain.mutate(mutationRate: self.mutationRate)
+
+            let newIndividual = Individual(
+                brain: newBrain,
+                initialPosition: self.individualInitialPosition,
+                size: self.individualSize,
+                speed: self.individualSpeed
+            )
+
+            newIndividuals.append(newIndividual)
+        }
+        // Adds champion of last generation to the new generation, unchanged
+        let champion = individuals[maxFitnessIndex]
+        newIndividuals.append(Individual(copy: champion, position: individualInitialPosition))
+        
+        self.individuals.removeAll()
+        self.individuals.append(contentsOf: newIndividuals)
+    }
+    
 }

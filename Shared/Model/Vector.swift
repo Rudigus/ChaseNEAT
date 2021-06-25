@@ -26,17 +26,17 @@ struct Vector: CustomStringConvertible {
     }
     
     func squaredDistance(to other: Vector) -> Double {
-        let diffX = self.x - other.x;
-        let diffY = self.y - other.y;
+        let diffX = self.x - other.x
+        let diffY = self.y - other.y
         return (diffX * diffX) + (diffY * diffY)
     }
     
-//    func distance(to other: Vector) -> Double {
-//        let diffX = self.x - other.x;
-//        let diffY = self.y - other.y;
-//        let productSum = (diffX * diffX) + (diffY * diffY)
-//        return sqrt(productSum)
-//    }
+    func distance(to other: Vector) -> Double {
+        let diffX = self.x - other.x
+        let diffY = self.y - other.y
+        let productSum = (diffX * diffX) + (diffY * diffY)
+        return sqrt(productSum)
+    }
     
 }
 

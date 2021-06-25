@@ -16,9 +16,25 @@ struct IndividualView: View {
     
     var body: some View {
         Circle()
-            .foregroundColor(.red)
+            .foregroundColor(individualColor(individual: individual))
             .frame(width: individual.size, height: individual.size)
             .offset(x: CGFloat(individual.position.x), y: CGFloat(individual.position.y))
+    }
+    
+    func individualColor(individual: Individual) -> Color {
+        if individual.state == .hasCompletedTask {
+            return .green
+        }
+        
+        if individual.state == .hasFailedTask {
+            return .red
+        }
+        
+        if individual.rank == .champion {
+            return .black
+        }
+        
+        return .white
     }
 }
 
