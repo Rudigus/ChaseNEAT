@@ -35,6 +35,12 @@ class Population: ObservableObject {
         self.generateIndividuals()
     }
     
+    func reset() {
+        self.generation = 1
+        self.individuals.removeAll()
+        self.generateIndividuals()
+    }
+    
     func update(targetPosition: Vector) {
         self.individuals.forEach { $0.update(targetPosition: targetPosition) }
     }
@@ -102,6 +108,7 @@ class Population: ObservableObject {
         
         self.individuals.removeAll()
         self.individuals.append(contentsOf: newIndividuals)
+        generation += 1
     }
     
 }

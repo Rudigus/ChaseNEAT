@@ -23,18 +23,19 @@ struct ContentView: View {
     @StateObject var target: Target
     
     init() {
-        let population = Population(individualCount: 100, individualSize: 10, individualSpeed: 8, mutationRate: 0.01)
+        let population = Population(individualCount: 100, individualSize: 10, individualSpeed: 4, mutationRate: 0.01)
         self._population = StateObject(wrappedValue: population)
-        self._target = StateObject(wrappedValue: Target(population: population, size: 20, margin: 50))
+        self._target = StateObject(wrappedValue: Target(population: population, size: 20))
     }
     
-    var body: some View {
+    private var view: some View {
         ZStack(alignment: .center) {
             Color.blue.edgesIgnoringSafeArea(.all)
             TargetView(target: target)
             ForEach(population.individuals) { (individual: Individual) in
                 IndividualView(individual: individual)
             }
+            HUDView(population: population, target: target)
         }
         .onReceive(simulationTick) { input in
             if !self.population.hasFinishedTask {
@@ -48,6 +49,15 @@ struct ContentView: View {
         .onReceive(deathTimer) { input in
             population.killRemainingIndividuals()
         }
+    }
+    
+    var body: some View {
+        #if os(iOS)
+        view
+            .statusBar(hidden: true)
+        #elseif os(macOS)
+        view
+        #endif
     }
     
 }

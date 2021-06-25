@@ -14,12 +14,10 @@ class Target: ObservableObject {
         }
     }
     var size: Double
-    var margin: Double
     
-    init(population: Population, size: Double, margin: Double) {
+    init(population: Population, size: Double) {
         self.position = .zero
         self.size = size
-        self.margin = margin
         randomizePosition(population: population)
     }
     
@@ -27,8 +25,8 @@ class Target: ObservableObject {
     // Still, it works.
     func randomizePosition(population: Population) {
         while true {
-            let randomX = Double.random(in: -Vector.simulationSize.x / 2 + margin ... (Vector.simulationSize.x / 2 - population.individualSize / 2 - margin))
-            let randomY = Double.random(in: -Vector.simulationSize.y / 2 + margin ... (Vector.simulationSize.y / 2 - population.individualSize / 2 - margin))
+            let randomX = Vector.simulationSize.x * Double.random(in: -0.35 ... 0.3)
+            let randomY = Vector.simulationSize.y * Double.random(in: -0.4 ... 0.35)
             let randomPosition = Vector(x: randomX, y: randomY)
             if randomPosition.squaredDistance(to: population.individualInitialPosition) >= 50000 {
                 self.position = Vector(x: randomX, y: randomY)

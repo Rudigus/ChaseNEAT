@@ -12,8 +12,13 @@ struct ChaseNEATApp: App {
     
     var body: some Scene {
         WindowGroup {
+            #if os(iOS)
             ContentView()
-                .frame(minWidth: Vector.screenSize.x / 2, minHeight: Vector.screenSize.y / 2)
+            #elseif os(macOS)
+            ContentView()
+                .frame(minWidth: Vector.screenSize.x / 2, maxWidth: Vector.screenSize.x / 2, minHeight: Vector.screenSize.y / 2, maxHeight: Vector.screenSize.y / 2)
+            #endif
+            
         }
     }
 }

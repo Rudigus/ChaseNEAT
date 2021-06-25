@@ -25,14 +25,16 @@
 		570E138526835A8500E4C286 /* Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570E138326835A8500E4C286 /* Layer.swift */; };
 		572875DB2680B40100A5561D /* ChaseNEATApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572875CD2680B40000A5561D /* ChaseNEATApp.swift */; };
 		572875DC2680B40100A5561D /* ChaseNEATApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572875CD2680B40000A5561D /* ChaseNEATApp.swift */; };
-		572875DD2680B40100A5561D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572875CE2680B40000A5561D /* ContentView.swift */; };
-		572875DE2680B40100A5561D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572875CE2680B40000A5561D /* ContentView.swift */; };
 		572875DF2680B40100A5561D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 572875CF2680B40100A5561D /* Assets.xcassets */; };
 		572875E02680B40100A5561D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 572875CF2680B40100A5561D /* Assets.xcassets */; };
 		573D801B26820DEF00EFBEB1 /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573D801A26820DEF00EFBEB1 /* Target.swift */; };
 		573D801C26820DEF00EFBEB1 /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573D801A26820DEF00EFBEB1 /* Target.swift */; };
 		573D801E26822E2D00EFBEB1 /* TargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573D801D26822E2D00EFBEB1 /* TargetView.swift */; };
 		573D801F26822E2D00EFBEB1 /* TargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573D801D26822E2D00EFBEB1 /* TargetView.swift */; };
+		5755D24B2685A174006482AC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5755D24A2685A174006482AC /* ContentView.swift */; };
+		5755D24C2685A174006482AC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5755D24A2685A174006482AC /* ContentView.swift */; };
+		5772D37B26858FD000B67361 /* HUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5772D37A26858FD000B67361 /* HUDView.swift */; };
+		5772D37C26858FD000B67361 /* HUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5772D37A26858FD000B67361 /* HUDView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,12 +47,13 @@
 		570320242680D13900FA213A /* IndividualView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualView.swift; sourceTree = "<group>"; };
 		570E138326835A8500E4C286 /* Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layer.swift; sourceTree = "<group>"; };
 		572875CD2680B40000A5561D /* ChaseNEATApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaseNEATApp.swift; sourceTree = "<group>"; };
-		572875CE2680B40000A5561D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		572875CF2680B40100A5561D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		572875D42680B40100A5561D /* ChaseNEAT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChaseNEAT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		572875DA2680B40100A5561D /* ChaseNEAT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChaseNEAT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		573D801A26820DEF00EFBEB1 /* Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
 		573D801D26822E2D00EFBEB1 /* TargetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetView.swift; sourceTree = "<group>"; };
+		5755D24A2685A174006482AC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5772D37A26858FD000B67361 /* HUDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,9 +92,10 @@
 		570320232680D11B00FA213A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				572875CE2680B40000A5561D /* ContentView.swift */,
+				5755D24A2685A174006482AC /* ContentView.swift */,
 				570320242680D13900FA213A /* IndividualView.swift */,
 				573D801D26822E2D00EFBEB1 /* TargetView.swift */,
+				5772D37A26858FD000B67361 /* HUDView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -222,16 +226,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				572875DD2680B40100A5561D /* ContentView.swift in Sources */,
 				5703201D2680BE2E00FA213A /* Neuron.swift in Sources */,
 				570320042680B58500FA213A /* Brain.swift in Sources */,
 				570E138426835A8500E4C286 /* Layer.swift in Sources */,
 				570320072680B5BB00FA213A /* Population.swift in Sources */,
 				573D801B26820DEF00EFBEB1 /* Target.swift in Sources */,
+				5772D37B26858FD000B67361 /* HUDView.swift in Sources */,
 				5703200D2680B5D400FA213A /* Individual.swift in Sources */,
 				570320252680D13900FA213A /* IndividualView.swift in Sources */,
 				573D801E26822E2D00EFBEB1 /* TargetView.swift in Sources */,
 				570320112680BA0200FA213A /* Vector.swift in Sources */,
+				5755D24B2685A174006482AC /* ContentView.swift in Sources */,
 				572875DB2680B40100A5561D /* ChaseNEATApp.swift in Sources */,
 				570320202680BE4700FA213A /* Synapse.swift in Sources */,
 			);
@@ -241,16 +246,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				572875DE2680B40100A5561D /* ContentView.swift in Sources */,
 				5703201E2680BE2E00FA213A /* Neuron.swift in Sources */,
 				570320052680B58500FA213A /* Brain.swift in Sources */,
 				570E138526835A8500E4C286 /* Layer.swift in Sources */,
 				570320082680B5BB00FA213A /* Population.swift in Sources */,
 				573D801C26820DEF00EFBEB1 /* Target.swift in Sources */,
+				5772D37C26858FD000B67361 /* HUDView.swift in Sources */,
 				5703200E2680B5D400FA213A /* Individual.swift in Sources */,
 				570320262680D13900FA213A /* IndividualView.swift in Sources */,
 				573D801F26822E2D00EFBEB1 /* TargetView.swift in Sources */,
 				570320122680BA0200FA213A /* Vector.swift in Sources */,
+				5755D24C2685A174006482AC /* ContentView.swift in Sources */,
 				572875DC2680B40100A5561D /* ChaseNEATApp.swift in Sources */,
 				570320212680BE4700FA213A /* Synapse.swift in Sources */,
 			);

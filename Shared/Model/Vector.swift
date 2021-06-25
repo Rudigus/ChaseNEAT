@@ -56,4 +56,5 @@ extension Vector {
     }()
     static let simulationSize = Vector(x: screenSize.x / 2, y: screenSize.y / 2)
     #endif
+    static let simulationMiddle = Vector(x: simulationSize.x / 2, y: simulationSize.y / 2)
 }
